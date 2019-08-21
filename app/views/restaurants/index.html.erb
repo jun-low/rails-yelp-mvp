@@ -1,1 +1,16 @@
-index.html.erb
+<div class="alert alert-dark" role="alert">
+  <h1>My list of Restaurants</h1>
+</div>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <div class="list-group">
+      <% @restaurants.each do |restaurant| %>
+        <%= link_to restaurant_path(restaurant), class: "list-group-item list-group-item-action" do %>
+          <h2><%= restaurant.name %></h2>
+          <p><%= restaurant.address %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
